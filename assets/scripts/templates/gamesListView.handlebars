@@ -1,0 +1,83 @@
+<!-- WANT TO PLAY | WANT TO PLAY | WANT TO PLAY | WANT TO PLAY | -->
+<!-- WANT TO PLAY | WANT TO PLAY | WANT TO PLAY | WANT TO PLAY | -->
+
+<div class="container">
+  <h3>Want to Play</h3>
+
+  <div class="table-responsive">
+  <table class="table want-to-play-table">
+
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each wantToPlayGames as |wantToPlay|}}
+      <tr>
+        <td>{{wantToPlay.title}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+
+  </div>
+</div>
+
+<!-- STARTED PLAYING | STARTED PLAYING | STARTED PLAYING | STARTED PLAYING -->
+<!-- STARTED PLAYING | STARTED PLAYING | STARTED PLAYING | STARTED PLAYING -->
+
+<div class="container">
+  <h3>Started Playing</h3>
+
+  <div class="table-responsive">
+  <table class="table started-playing-table">
+
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each startedGames as |started|}}
+      <tr>
+        <td>{{started.title}}</td>
+      </tr>
+    {{/each}}
+    </tbody>
+
+  </table>
+
+  </div>
+</div>
+
+<!-- COMPLETED | COMPLETED | COMPLETED | COMPLETED | COMPLETED | COMPLETED | -->
+<!-- COMPLETED | COMPLETED | COMPLETED | COMPLETED | COMPLETED | COMPLETED | -->
+
+<div class="container">
+  <h3>Completed</h3>
+
+  <div class="table-responsive">
+  <table class="table completed-playing-table">
+
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each completedGames as |completed|}}
+      <tr>
+        <td>{{completed.title}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+
+  </div>
+</div>
