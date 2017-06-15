@@ -12,3 +12,14 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+
+$('.signed-in-view').hide()
+$('.signed-out-view').show()
+$('#user-messages').hide()
+
+const authEvents = require('./userAuth/events.js')
+
+// On document ready
+$(() => {
+  authEvents.addHandlers()
+})
