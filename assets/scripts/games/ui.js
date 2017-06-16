@@ -70,8 +70,8 @@ const getGamesSuccessQuiet = (data) => {
 }
 
 // GET GAMES FAILURE | GET GAMES FAILURE | GET GAMES FAILURE | GET GAMES FAILURE |
-const getGamesFailure = () => {
-  console.log('getGamesFailure ran!')
+const getGamesFailure = (error) => {
+  console.error('getGamesFailure ran!')
 }
 
 const onDeleteGame = (event) => {
@@ -86,8 +86,8 @@ const deleteGameSuccess = () => {
   $('#game-info-content').empty()
 }
 
-const deleteGameFailure = () => {
-  console.log('Failed to Delete Game')
+const deleteGameFailure = (error) => {
+  console.error('Failed to Delete Game')
 }
 
 const updateGameSuccess = () => {
@@ -95,8 +95,8 @@ const updateGameSuccess = () => {
   $('#game-info-content').empty()
 }
 
-const updateGameFailure = () => {
-  console.log('Failed to Update Game!')
+const updateGameFailure = (error) => {
+  console.error('Failed to Update Game!')
 }
 
 const onChangeToWant = (event) => {
@@ -151,8 +151,6 @@ const onCloseGameInfo = (event) => {
 // GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO |
 const onShowGameInfo = (event) => {
   const currentSelectedGameId = $(event.target).attr('data-id')
-  console.log('event.target is ', event.target)
-  console.log('currentSelectedGameId is ', currentSelectedGameId)
   renderGameInfo(currentSelectedGameId)
 }
 
@@ -160,11 +158,8 @@ const renderGameInfo = (currentSelectedGameId) => {
   const currentGameArray = store.games.filter((game) => {
     return String(game.id) === currentSelectedGameId
   })
-  console.log('currentGameArray is ', currentGameArray)
   const currentSelectedGame = currentGameArray[0]
-  console.log('currentSelectedGame is ', currentSelectedGame)
   store.currentSelectedGame = currentSelectedGame
-  console.log('currentSelectedGame is ', currentSelectedGame)
   store.currentSelectedGame.isWantToPlay = false
   store.currentSelectedGame.isStarted = false
   store.currentSelectedGame.isCompleted = false

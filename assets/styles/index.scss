@@ -1,25 +1,51 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  font-family: 'Play', sans-serif;
+}
+
+.nav {
+  font-size: 18px;
+}
+
+.list-header {
+  color: #4b367c;
+}
+
+#go-home-button {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4b367c;
+}
+
+.game-info-text {
+  color: #4b367c;
+}
+
 .list-container-div {
   border-color: #000;
   border-style: solid;
   border-width: 2px;
   padding: 20px;
+  border-radius: 5px;
+  // margin: 2px;
 }
 
 .list-item-div {
   border-color: grey;
   border-style: solid;
   border-width: 1px;
-  height: 60px;
+  border-radius: 3px;
+  height: 75px;
   margin: 2px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .list-header {
   margin-bottom: 20px;
   text-align: center;
+  color: #4b367c;
 }
 
 .game-info-div {
@@ -28,8 +54,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-width: 2px;
   padding: 30px;
   height: 400px;
-  margin-top: 40px;
-  margin-bottom: 60px;
+  margin: auto;
+  // margin-top: 40px;
+  // margin-bottom: 60px;
 }
 
 #game-info-game-img-div {
@@ -44,5 +71,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .game-info-text-div {
-  margin: 20px;
+  margin: auto;
+  border-left-color: black;
+  border-left-width: 1px;
+  padding-left: 20px;
+  // margin: 20px;
+}
+
+.footer {
+  margin-top: 80px;
 }

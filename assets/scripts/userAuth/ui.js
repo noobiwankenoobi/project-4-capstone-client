@@ -1,6 +1,9 @@
 'use strict'
 
 const store = require('../store.js')
+const gamesEvents = require('../games/events.js')
+const gamesApi = require('../games/api.js')
+const gamesUi = require('../games/ui.js')
 
 // HELPERS
 const userMessage = (message) => {
@@ -30,6 +33,9 @@ const signInSuccess = (data) => {
   $('#sign-up')[0].reset()
   $('#sign-in')[0].reset()
   $('#sign-in-modal').modal('hide')
+  gamesApi.getGames()
+    .then(gamesUi.getGamesSuccess)
+    .catch(gamesUi.getGamesFailure)
 }
 
 const signInFailure = (error) => {
