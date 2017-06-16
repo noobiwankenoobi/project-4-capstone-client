@@ -1,2 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.list-container-div {
+  border-color: #000;
+  border-style: solid;
+  border-width: 2px;
+  padding: 20px;
+}
+
+.list-item-div {
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
+  height: 60px;
+  margin: 2px;
+  padding: 10px;
+}
+
+.list-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
