@@ -53,6 +53,8 @@ const signOutSuccess = () => {
   store.user = null
   $('.signed-in-view').hide()
   $('.signed-out-view').show()
+  $('#games-list-content').empty()
+  $('#game-info-content').empty()
 }
 
 const signOutFailure = (error) => {

@@ -141,6 +141,11 @@ const onChangeToComplete = (event) => {
     .catch(updateGameFailure)
 }
 
+const onCloseGameInfo = (event) => {
+  event.preventDefault()
+  $('#game-info-content').empty()
+}
+
 // GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO |
 // GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO |
 // GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO | GAME CLICK | SHOW GAME INFO |
@@ -176,7 +181,8 @@ const renderGameInfo = (currentSelectedGameId) => {
     game: currentSelectedGame,
     isWantToPlay: store.currentSelectedGame.isWantToPlay,
     isStarted: store.currentSelectedGame.isStarted,
-    isCompleted: store.currentSelectedGame.isCompleted
+    isCompleted: store.currentSelectedGame.isCompleted,
+    statusName: store.statusNames[Number(store.currentSelectedGame.progress)]
   })
   $('#game-info-content').empty()
   $('#game-info-content').append(gameInfoHTML)
@@ -184,6 +190,7 @@ const renderGameInfo = (currentSelectedGameId) => {
   $('#want-to-play-button').click(onChangeToWant)
   $('#started-playing-button').click(onChangeToStart)
   $('#completed-button').click(onChangeToComplete)
+  $('#close-game-info-button').click(onCloseGameInfo)
 }
 
 // NEW GAME SUCCESS AND FAILURE | NEW GAME SUCCESS AND FAILURE | NEW GAME SUCCESS AND FAILURE |

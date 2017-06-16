@@ -2,15 +2,15 @@
 
   <div id="game-info-panel" class="container col-xs-12">
 
-    <div id="game-info-game-img-div"class="container col-xs-4">
+    <div id="game-info-game-img-div"class="container col-xs-3">
       <img class="img-thumbnail" src="{{game.cover_url}}" alt="Game Cover">
     </div>
 
     <div class="container col-xs-7 game-info-text-div">
       <h3>Game Info</h3>
       <div class="container col-xs-12">
-        <h4>Title: {{game.title}}</h4>
-        <h4>Status: {{game.progress}}</h4>
+        <h4>Title: <strong>{{game.title}}</strong></h4>
+        <h4>Status: <strong>{{statusName}}</strong></h4>
         <button data-id="{{game.id}}" class="btn btn-danger delete-game-button">Delete Game</button>
       </div>
 
@@ -29,6 +29,10 @@
         {{/unless}}
       </div>
 
+    </div>
+
+    <div id="close-game-info-panel" class="col-xs-1">
+      <button id="close-game-info-button" class="btn btn-info">Close</button>
     </div>
 
   </div>
