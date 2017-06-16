@@ -3,11 +3,21 @@
 const api = require('./api')
 const ui = require('./ui.js')
 
+const getFormFields = require('../../../lib/get-form-fields')
+
 const onGetGames = function (event) {
   event.preventDefault()
-  api.getMovies()
+  api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.getGamesFailure)
+}
+
+const onNewGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.newGame(data)
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
 }
 
 // GO HOME | GO HOME | GO HOME | GO HOME | GO HOME |
@@ -16,10 +26,16 @@ const onGoHome = function (event) {
   $('#content').empty()
 }
 
+const onShowNewGameModal = () => {
+  $('#create-new-game-modal').modal('show')
+}
+
 // EVENT HANDLERS |
 const addHandlers = () => {
-  $('#all-games-button').on('click', onGetGames)
   $('#go-home-button').on('click', onGoHome)
+  $('#nav-lists-button').on('click', onGetGames)
+  $('#nav-create-game-button').on('click', onShowNewGameModal)
+  $('#create-new-game-form').on('submit', onNewGame)
 }
 
 module.exports = {

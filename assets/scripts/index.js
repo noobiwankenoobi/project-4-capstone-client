@@ -18,8 +18,10 @@ $('.signed-out-view').show()
 $('#user-messages').hide()
 
 const authEvents = require('./userAuth/events.js')
+const gameEvents = require('./games/events.js')
 
 // On document ready
 $(() => {
   authEvents.addHandlers()
+  gameEvents.addHandlers()
 })
