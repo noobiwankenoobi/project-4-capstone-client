@@ -1,11 +1,19 @@
 'use strict'
 
-// const store = require('../store.js')
+const store = require('../store.js')
 // const api = require('./api')
 
 const getGamesSuccess = (data) => {
-  console.log('getGamesSuccess ran!')
-  console.log(data)
+  store.games = data.games
+  store.toPlay = store.games.filter((game) => {
+    return game.progress === 0
+  })
+
+  template = templateFile({
+    toPlay: store.toPlay
+    startedplay: store.startedplay
+    donePlay: store.donePlay
+  })
 }
 
 const getGamesFailure = () => {
