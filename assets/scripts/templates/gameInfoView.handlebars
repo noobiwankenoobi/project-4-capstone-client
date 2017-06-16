@@ -2,11 +2,32 @@
 
   <div id="game-info-panel" class="container col-xs-12">
 
-    <div class="container">
-
+    <div id="game-info-game-img-div"class="container col-xs-4">
+      <img class="img-thumbnail" src="{{game.cover_url}}" alt="Game Cover">
     </div>
 
-    <div class="container game-info-text">
+    <div class="container col-xs-7 game-info-text-div">
+      <h3>Game Info</h3>
+      <div class="container col-xs-12">
+        <h4>Title: {{game.title}}</h4>
+        <h4>Status: {{game.progress}}</h4>
+        <button data-id="{{game.id}}" class="btn btn-danger delete-game-button">Delete Game</button>
+      </div>
+
+      <br>
+
+      <div class="container col-xs-12 update-status-buttons-div">
+        <h4>Update Play Status</h4>
+        {{#unless isWantToPlay}}
+          <button id="want-to-play-button" data-id="{{game.id}}" class="btn btn-info">Want to Play</button>
+        {{/unless}}
+        {{#unless isStarted}}
+          <button id="started-playing-button" data-id="{{game.id}}" class="btn btn-info">Started Playing</button>
+        {{/unless}}
+        {{#unless isCompleted}}
+          <button id="completed-button" data-id="{{game.id}}" class="btn btn-info">Finished Playing</button>
+        {{/unless}}
+      </div>
 
     </div>
 

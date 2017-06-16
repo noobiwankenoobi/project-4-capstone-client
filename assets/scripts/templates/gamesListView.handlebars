@@ -8,8 +8,14 @@
 
       {{#each wantToPlayGames as |wantToPlayGame|}}
 
-        <div class="list-item-div" data-id="{{wantToPlayGame.id}}">
-          <h4>{{wantToPlayGame.title}}</h4>
+        <div class="list-item-div active hover" data-id="{{wantToPlayGame.id}}">
+          <div class="col-xs-7">
+            <h4 data-id="{{wantToPlayGame.id}}">{{wantToPlayGame.title}}</h4>
+          </div>
+          <div class="col-xs-5">
+            <button data-id="{{wantToPlayGame.id}}" class="btn btn-sm btn-info list-item-more-button">More</button>
+            <button data-id="{{wantToPlayGame.id}}" class="btn btn-sm btn-danger delete-game-button">X</button>
+          </div>
         </div>
 
       {{/each}}
@@ -26,8 +32,14 @@
 
       {{#each startedGames as |startedGame|}}
 
-        <div class="list-item-div" data-id="{{startedGame.id}}">
-          <h4>{{startedGame.title}}</h4>
+        <div class="list-item-div active hover" data-id="{{startedGame.id}}">
+          <div class="col-xs-7">
+            <h4 data-id="{{startedGame.id}}">{{startedGame.title}}</h4>
+          </div>
+          <div class="col-xs-5">
+            <button data-id="{{startedGame.id}}" class="btn btn-sm btn-info list-item-more-button">More</button>
+            <button data-id="{{startedGame.id}}" class="btn btn-sm btn-danger delete-game-button">X</button>
+          </div>
         </div>
 
       {{/each}}
@@ -44,8 +56,14 @@
 
       {{#each completedGames as |completedGame|}}
 
-        <div class="list-item-div" data-id="{{completedGame.id}}">
-          <h4>{{completedGame.title}}</h4>
+        <div class="list-item-div active hover" data-id="{{completedGame.id}}">
+          <div class="col-xs-7">
+            <h4 data-id="{{completedGame.id}}">{{completedGame.title}}</h4>
+          </div>
+          <div class="col-xs-5">
+            <button data-id="{{completedGame.id}}" class="btn btn-sm btn-info list-item-more-button">More</button>
+            <button data-id="{{completedGame.id}}" class="btn btn-sm btn-danger delete-game-button">X</button>
+          </div>
         </div>
 
       {{/each}}
