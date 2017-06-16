@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+<!-- NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR -->
+<!-- NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR -->
+<!-- NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR | NAV BAR -->
+
+
+      <nav class="navbar navbar-static-top navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a id="go-home-button" class="navbar-brand" href="#">DASHER</a>
+          </div>
+<!-- NAV BUTTONS | NAV BUTTONS | NAV BUTTONS | NAV BUTTONS | NAV BUTTONS | NAV BUTTONS | NAV BUTTONS -->
+          <ul class="nav navbar-nav navbar-left">
+            <li id="nav-lists-button" class="signed-in-view"><a href="#">List</a></li>
+            <li id="nav-create-game-button" class="signed-in-view"><a href="#">Create Game</a></li>
+          </ul>
+<!-- NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH | NAV AUTH -->
+          <ul class="nav navbar-nav navbar-right">
+            <li id="sign-up-show-modal-button" class="signed-out-view"><a href="#">Sign Up</a></li>
+            <li id="sign-in-show-modal-button" class="signed-out-view"><a href="#">Sign In</a></li>
+            <li id="change-password-show-modal-button" class="signed-in-view"><a href="#">Change Password</a></li>
+            <li id="sign-out-button" class="signed-in-view"><a href="#">Sign Out</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="signed-out-view">
+        <h1>Welcome to Dasher</h1>
+      </div>
+
+<!-- PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT -->
+<!-- PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT -->
+<!-- PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT | PAGE CONTENT -->
+
+
+<!-- HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT -->
+<!-- HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT | HANDLEBARS CONTENT -->
+
+<div id="games-list-content"></div>
+
+<br>
+
+<div id="game-info-content"></div>
+
+
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+<!-- [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | [USER AUTH] MODALS HERE | -->
+
+      <!-- Sign Up Modal -->
+      <!-- Sign Up Modal -->
+      <div id="sign-up-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Create Account</h4>
+            </div>
+
+            <div class="modal-body">
+
+              <form id="sign-up" class="form-inline signed-out-view">
+
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" name="credentials[email]" class="form-control" autofocus required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" name="credentials[password]" class="form-control" required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="pwd">Password Confirmation:</label>
+                  <input type="password" name="credentials[password_confirmation]" class="form-control" required>
+                </div>
+                <br>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Create</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sign In Modal -->
+      <!-- Sign In Modal -->
+      <div id="sign-in-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Login</h4>
+            </div>
+
+            <div class="modal-body">
+
+              <form id="sign-in" class="form-inline signed-out-view">
+
+                <div class="form-group">
+                  <label for="email">Email Address:</label>
+                  <input type="email" name="credentials[email]" class="form-control" autofocus required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" name="credentials[password]" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Sign In</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Change Password Modal -->
+      <!-- Change Password Modal -->
+      <div id="change-password-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Change Password</h4>
+            </div>
+
+            <div class="modal-body">
+
+              <form id="change-password" class="form-inline signed-in-view">
+
+                <div class="form-group">
+                  <label for="pwd">Old Password:</label>
+                  <input type="password" name="passwords[old]" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">New Password:</label>
+                  <input type="password" name="passwords[new]" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- New Game Modal -->
+      <!-- New Game Modal-->
+      <div id="create-new-game-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Create New Game</h4>
+            </div>
+
+            <div class="modal-body">
+
+              <form id="create-new-game-form" class="form-inline signed-in-view">
+
+                <div class="form-group">
+                  <label for="pwd">Title</label>
+                  <input type="text" name="game[title]" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Image URL</label>
+                  <input type="text" name="game[cover_url]" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Progress</label>
+                  <input type="number" name="game[progress]" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-xs-12 footer">
+      </div>
+    </body>
+</html>
